@@ -1,0 +1,77 @@
+@use '../styles/mixins' as *;
+
+.header {
+  --border-dark: #1b2a56;
+  --border-mid: #2f4b8b;
+  --border-light: #8fb3ff;
+  --panel-top: #2b4ea4;
+  --panel-bot: #1c2f6c;
+
+  width: min(980px, 94vw);
+  margin: 24px auto 12px;
+  text-align: center;
+
+  /* cut corners */
+  clip-path: polygon(
+    14px 0,
+    calc(100% - 14px) 0,
+    100% 14px,
+    100% calc(100% - 14px),
+    calc(100% - 14px) 100%,
+    14px 100%,
+    0 calc(100% - 14px),
+    0 14px
+  );
+}
+
+.header__inner {
+  background: linear-gradient(to bottom, var(--panel-top), var(--panel-bot));
+  border: 3px solid #0b1433;
+  box-shadow:
+    inset 0 0 0 3px rgba(255, 255, 255, 0.12),
+    inset 0 -6px 0 rgba(0, 0, 0, 0.25);
+  padding: 14px 18px 12px;
+@include noisy-grain(0.35, 220px);
+
+  clip-path: polygon(
+    12px 0,
+    calc(100% - 12px) 0,
+    100% 12px,
+    100% calc(100% - 12px),
+    calc(100% - 12px) 100%,
+    12px 100%,
+    0 calc(100% - 12px),
+    0 12px
+  );
+}
+
+.header__name {
+  margin: 0;
+  font-size: clamp(26px, 3.6vw, 44px);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  /* pixel look (use a pixel font if you have one) */
+  font-family: "Press Start 2P", system-ui, sans-serif;
+
+  color: #f0d26a; /* gold */
+  text-shadow:
+    -2px -2px 0 #0b1433,
+    2px -2px 0 #0b1433,
+    -2px 2px 0 #0b1433,
+    2px 2px 0 #0b1433,
+    0 4px 0 rgba(0, 0, 0, 0.35);
+}
+
+.header__role {
+  margin: 10px 0 0;
+  font-family: "Press Start 2P", system-ui, sans-serif;
+  font-size: clamp(12px, 1.6vw, 18px);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #e9f2ff;
+  text-shadow:
+    -2px 0 0 #0b1433,
+    2px 0 0 #0b1433,
+    0 2px 0 rgba(0, 0, 0, 0.35);
+}

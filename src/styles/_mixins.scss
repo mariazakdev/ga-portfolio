@@ -1,0 +1,19 @@
+@mixin noisy-grain($opacity: 0.25, $size: 200px) {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    background: url('../assets/grain_texture.png');
+    background-size: $size $size;
+    background-repeat: repeat;
+
+    mix-blend-mode: overlay;
+    opacity: $opacity;
+  }
+}
+
