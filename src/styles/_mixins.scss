@@ -1,3 +1,12 @@
+// Breakpoints
+$bp-xs: 360px;
+$bp-sm: 480px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+
+
 @mixin noisy-grain($opacity: 0.25, $size: 200px) {
   position: relative;
   overflow: hidden;
@@ -17,3 +26,39 @@
   }
 }
 
+// Min-width media query
+@mixin up($bp) {
+  @media (min-width: $bp) {
+    @content;
+  }
+}
+
+// Max-width media query
+@mixin down($bp) {
+  @media (max-width: ($bp - 1px)) {
+    @content;
+  }
+}
+
+// Between two breakpoints (inclusive lower bound)
+@mixin between($min, $max) {
+  @media (min-width: $min) and (max-width: ($max - 1px)) {
+    @content;
+  }
+}
+
+// Prefer-reduced-motion helper
+@mixin reduced-motion {
+  @media (prefers-reduced-motion: reduce) {
+    @content;
+  }
+}
+
+// Optional: clamp font helper
+@mixin fluid-type($minSize, $maxSize, $minVw: 360px, $maxVw: 1280px) {
+  font-size: clamp(
+    $minSize,
+    calc(#{$minSize} + (#{$maxSize} - #{$minSize}) * ((100vw - #{$minVw}) / (#{$maxVw} - #{$minVw}))),
+    $maxSize
+  );
+}
