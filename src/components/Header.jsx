@@ -1,4 +1,3 @@
-// Header.jsx
 import "./Header.scss";
 
 export default function Header() {

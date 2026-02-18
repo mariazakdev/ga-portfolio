@@ -2,15 +2,13 @@
 
 
 .nav {
-  width: min(980px, 94vw);
+    width: min(1280px, 96vw); // wider container
   margin: 24px auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
 
-  .nav__btn--green {
-    grid-column: 1 / -1; // full width like screenshot bottom button
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+ 
 }
 
 .nav__btn {
