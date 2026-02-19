@@ -62,3 +62,23 @@ $bp-xl: 1280px;
     $maxSize
   );
 }
+
+@mixin medieval-font(
+  $size: null,
+  $spacing: 2px,
+  $color: #f5d27a
+) {
+  font-family: 'MedievalSharp', cursive;
+  text-transform: uppercase;
+  letter-spacing: $spacing;
+  text-decoration: none;
+  color: $color;
+
+  @if $size {
+    font-size: $size;
+  }
+
+  // text-shadow:
+  //   2px 2px 0 #1a102e,
+  //   0 0 6px rgba(245, 210, 122, 0.35);
+}

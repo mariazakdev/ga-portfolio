@@ -13,7 +13,8 @@
 
 .nav__btn {
 @include noisy-grain(0.35, 220px);
-  font-family: "Press Start 2P", system-ui, sans-serif;
+@include medieval-font(null, 2px);
+
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: clamp(12px, 1.4vw, 16px);
