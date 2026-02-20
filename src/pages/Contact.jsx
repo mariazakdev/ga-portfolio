@@ -3,7 +3,7 @@ import avatar from '../assets/ryan.jpg'
 
 function Contact() {
   return (
-    <div className="contact">
+    <div id="contact" className="contact">
       <h2 className="contact__title">CONTACT ME</h2>
 
       <div className="contact__panel">

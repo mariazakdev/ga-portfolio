@@ -50,7 +50,7 @@ const BUGS = [
 
 function BugPortfolio() {
   return (
-    <div className="bugs">
+    <div id="portfolio" className="bugs">
       <h2 className="bugs__title">BUG PORTFOLIO</h2>
 
       <div className="bugs__panel">

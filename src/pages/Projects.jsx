@@ -15,7 +15,7 @@ const PROJECTS = [
 
 export default function Projects() {
   return (
-    <div className="projects">
+    <div id="projects" className="projects">
       <h2 className="projects__title">PROJECTS</h2>
 
       <div className="projects__panel">

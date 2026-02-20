@@ -1,3 +1,4 @@
+import Nav from "./Nav";
 import "./Header.scss";
 
 export default function Header() {
@@ -7,6 +8,7 @@ export default function Header() {
         <h1 className="header__name">RYAN PIRNASAR</h1>
        
       </div> <p className="header__role">QA TESTER</p>
+          <Nav />
     </header>
   );
 }
