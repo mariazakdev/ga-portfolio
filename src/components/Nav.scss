@@ -1,80 +1,3 @@
-// @use '../styles/mixins' as *;
-
-
-// .nav {
-//   max-width: 1100px;
-//   margin: 0 auto;
-//   padding: 0 16px;
-
-//   display: flex;
-//   flex-wrap: wrap;
-//   justify-content: center;
-//   gap: 18px;
-// }
-
-// .nav__btn {
-// @include noisy-grain(0.35, 220px);
-// @include medieval-font(null, 2px);
-
-//   text-transform: uppercase;
-//   letter-spacing: 1px;
-//   font-size: clamp(12px, 1.4vw, 16px);
-//   padding: 22px 16px;
-//   border: 4px solid #0b1433;
-//   cursor: pointer;
-//   width:150px;
-//   height: 20px;
-
-//   clip-path: polygon(
-//     12px 0,
-//     calc(100% - 12px) 0,
-//     100% 12px,
-//     100% calc(100% - 12px),
-//     calc(100% - 12px) 100%,
-//     12px 100%,
-//     0 calc(100% - 12px),
-//     0 12px
-//   );
-
-//   box-shadow:
-//     inset 0 0 0 3px rgba(255, 255, 255, 0.12),
-//     inset 0 -6px 0 rgba(0, 0, 0, 0.25),
-//     0 6px 0 rgba(0, 0, 0, 0.35);
-
-//   transition: transform 0.1s ease;
-
-//   &:active {
-//     transform: translateY(4px);
-//     box-shadow:
-//       inset 0 0 0 3px rgba(255, 255, 255, 0.12),
-//       inset 0 -2px 0 rgba(0, 0, 0, 0.25),
-//       0 2px 0 rgba(0, 0, 0, 0.35);
-//   }
-// }
-
-// /* Individual colors */
-
-// .nav__btn--blue {
-//   background: linear-gradient(to bottom, #3f6ed8, #233f8f);
-//   color: #ffffff;
-// }
-
-// .nav__btn--yellow {
-//   background: linear-gradient(to bottom, #f2b533, #b77711);
-//   color: #1b1203;
-// }
-
-// .nav__btn--red {
-//   background: linear-gradient(to bottom, #d84a3f, #8f241e);
-//   color: #ffffff;
-// }
-
-// .nav__btn--green {
-//   background: linear-gradient(to bottom, #4caf50, #2f6e34);
-//   color: #ffffff;
-// }
-
-
 .nav {
   display: flex;
   flex-wrap: wrap;
@@ -83,7 +6,7 @@
 }
 
 .nav img {
-  width: 260px;        // adjust
+  width: 260px;        
   height: auto;
   display: block;
   cursor: pointer;
