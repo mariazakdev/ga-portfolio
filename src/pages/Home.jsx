@@ -4,8 +4,8 @@ import "./Home.scss";
 
 export default function Home() {
   return (
-    <main className="home">
-      <Nav />
+    <main id="home" className="home">
+      {/* background image in sass pg */}
     </main>
   );
 }

@@ -23,7 +23,16 @@
     0 14px
   );
 }
+.header__home {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
 
+.header__home:hover {
+  filter: brightness(1.05);
+}
 .header__inner {
   background: linear-gradient(to bottom, var(--panel-top), var(--panel-bot));
   border: 3px solid #0b1433;
