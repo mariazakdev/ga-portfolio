@@ -1,4 +1,4 @@
-@use '../styles/mixins' as *;
+@use "../styles/mixins" as *;
 
 .projects {
   max-width: 1100px;
@@ -17,8 +17,6 @@
 }
 
 .projects__title {
-  // if you use medieval-font mixin:
-  // @include medieval-font(32px, 3px);
   font-size: 32px;
   margin-bottom: 26px;
   letter-spacing: 2px;
@@ -33,77 +31,65 @@
 
   padding: 26px;
   text-align: left;
-
   @include noisy-grain(0.22, 220px);
 }
 
-.projects__grid {
+.projects__list {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px;
+  gap: 26px;
+}
 
-  @media (max-width: 900px) {
+.projectCard {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 18px;
+  align-items: stretch;
+
+  @media (max-width: 980px) {
     grid-template-columns: 1fr;
   }
 }
 
-.project {
-  text-align: center;
-}
-
-.project__frame {
+.projectCard__media {
+  background: rgba(10, 10, 14, 0.75);
   border: 2px solid rgba(202, 164, 77, 0.85);
   box-shadow:
-    inset 0 0 0 4px rgba(245, 210, 122, 0.25),
+    inset 0 0 0 4px rgba(245, 210, 122, 0.22),
     0 0 18px rgba(0, 0, 0, 0.35);
 
-  padding: 10px;
-  background: rgba(20, 10, 40, 0.35);
-  @include noisy-grain(0.14, 260px);
+  overflow: hidden;
 }
 
-.project__img {
+.projectCard__img {
   width: 100%;
-  height: 260px;
+  height: 100%;
+  max-height: 360px;
   object-fit: cover;
   display: block;
+
+  @media (max-width: 980px) {
+    max-height: 320px;
+  }
 }
 
-.project__name {
-  margin-top: 10px;
-  color: #f5d27a;
-  font-weight: 800;
-  letter-spacing: 0.8px;
+.projectCard__text {
+  background: #ffffff;
+  color: #111;
+  padding: 18px 18px 16px;
 }
 
-.projects__actions {
-  display: flex;
-  justify-content: center;
-  margin-top: 22px;
+.projectCard__heading {
+  margin: 0 0 10px;
+  font-size: 22px;
+  line-height: 1.15;
 }
 
-.btn {
-  padding: 16px 28px;
+.projectCard__p {
+  margin: 0 0 12px;
+  line-height: 1.55;
   font-size: 16px;
-  border: none;
-  cursor: pointer;
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
 
-  border: 2px solid #caa44d;
-  box-shadow:
-    inset 0 0 0 4px rgba(245, 210, 122, 0.22),
-    inset 0 -6px 0 rgba(0, 0, 0, 0.25),
-    0 6px 0 rgba(0, 0, 0, 0.35);
-
-  @include noisy-grain(0.22, 220px);
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.btn--blue {
-  background: linear-gradient(to bottom, #2f60c8, #1b2f74);
+  &:last-child {
+    margin-bottom: 0;
+  }
 }

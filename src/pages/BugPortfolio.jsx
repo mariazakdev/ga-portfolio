@@ -1,5 +1,11 @@
 import './BugPortfolio.scss'
 
+const PROJECTS = [
+  { id: 'vid1', title: 'Video 1', img: '/src/assets/QA Portfolio Asset 3 Bug Portfolio Page-Bug Report #1.mp4 ' },
+  { id: 'vid2', title: 'Video 2', img: '/src/assets/projects/d:\Ryan Data for site\QA Portfolio Asset 6 (Bug Portfolio Page-Bug Report #2 ).mp4' },
+
+]
+
 const BUGS = [
   {
     id: 'bug1',
