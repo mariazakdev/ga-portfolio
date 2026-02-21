@@ -1,9 +1,9 @@
 import "./Projects.scss";
 
 import endlessNight from "../assets/endless_night.PNG";
-import mlbVr from "../assets/run_derby.PNG";
-import lastSkyEn from "../assets/The_last_sky.png";
-import lastSkyLoc from "../assets/The_last_sky_Japanese.png";
+import mlbVr from "../assets/Run_Derby.PNG";
+import lastSkyEn from "../assets/The_last_sky_English.PNG";
+import lastSkyLoc from "../assets/The_last_sky.PNG";
 
 const PROJECTS = [
   {
@@ -26,7 +26,7 @@ const PROJECTS = [
   },
   {
     id: "last-sky-en",
-    fileLabel: "The Last Sky",
+    fileLabel: "The Last Sky. English Version",
     img: lastSkyEn,
     summary: [
       "The Last Sky is a narrative-driven psychological puzzle game set in a surreal dreamscape that explores themes of memory, trauma, and self-reflection. Players navigate visually striking environments, solve environmental puzzles, and uncover fragments of the protagonist’s past to progress through the story.",
@@ -35,7 +35,7 @@ const PROJECTS = [
   },
   {
     id: "last-sky-loc",
-    fileLabel: "The Last Sky. Chinese, Korean, and Japanese Version",
+    fileLabel: "The Last Sky",
     img: lastSkyLoc,
     summary: [
       "The Last Sky is a narrative-driven psychological puzzle game set within a surreal dream world that explores memory and personal reflection.",
