@@ -35,7 +35,7 @@ const PROJECTS = [
   },
   {
     id: "last-sky-loc",
-    fileLabel: "The Last Sky. Chinese, Korean, and Japanese version",
+    fileLabel: "The Last Sky. Chinese, Korean, and Japanese Version",
     img: lastSkyLoc,
     summary: [
       "The Last Sky is a narrative-driven psychological puzzle game set within a surreal dream world that explores memory and personal reflection.",
