@@ -1,69 +1,57 @@
 import './BugPortfolio.scss'
 
-const PROJECTS = [
-  { id: 'vid1', title: 'Video 1', img: '/src/assets/QA Portfolio Asset 3 Bug Portfolio Page-Bug Report #1.mp4 ' },
-  { id: 'vid2', title: 'Video 2', img: '/src/assets/projects/d:\Ryan Data for site\QA Portfolio Asset 6 (Bug Portfolio Page-Bug Report #2 ).mp4' },
-
-]
+import bug1Video from '../assets/Page-Bug Report 1.mp4'
+import bug2Video from '../assets/Page-Bug Report 2.mp4'
 
 const BUGS = [
   {
     id: 'bug1',
-    project: 'Endless Night: Darkness Within',
+    project: 'Endless Night: Darkness Within (Project)',
     title: 'Texture Artifact Occluding Background Layer',
     severity: 'Major',
     platform: 'PC',
     status: 'Open',
-    summary: 'A texture artifact fully obscures the background layer in the vigil area.',
+    summary:
+      'A texture artifact fully obscures the background layer in the vigil area.',
     steps: [
-      'Enter the vigil area and move the player toward the far left side.',
-      'Move the player close to the left edge of the platform as far as possible.',
-      'Control (fly) the character through the level layout of the vigil area.',
+      'Enter the vigil area and move the character toward the far left side.',
+      'Move close to the left edge of the platform as far as possible.',
+      'Fly through the vigil area layout.',
       'The texture artifact fully obscures the background layer.',
     ],
+    video: bug1Video,
   },
   {
     id: 'bug2',
-    project: 'The Last Sky (English Version)',
-    title: 'UI Text Overflow in Menu Buttons',
-    severity: 'Minor',
+    project: 'Endless Night: Darkness Within (Project)',
+    title: 'Character Clipping Through Floor in Outer Space Level',
+    severity: 'Major',
     platform: 'PC',
     status: 'Open',
-    summary: 'Some menu labels overflow their button container at certain resolutions.',
+    summary:
+      'Cape Jake clips through the wooden floor edge and falls into Outer Space.',
     steps: [
-      'Launch the game and open the main menu.',
-      'Switch resolution to 1280x720 and 1366x768.',
-      'Navigate through menu items with longer labels.',
-      'Observe text clipping/overflow on specific buttons.',
+      'At level start, move Cape Jake left.',
+      'Float right and drop onto the burning house floor.',
+      'Move right and skip dialogue.',
+      'Avoid summoned firefly and proceed right.',
+      'Move to the wooden floor edge.',
+      'Cape Jake clips through and falls.',
     ],
-  },
-  {
-    id: 'bug3',
-    project: 'MLB Home Run Derby VR',
-    title: 'Intermittent Controller Input Drop',
-    severity: 'Major',
-    platform: 'VR',
-    status: 'Investigating',
-    summary: 'Controller inputs occasionally stop registering for 1–2 seconds during gameplay.',
-    steps: [
-      'Start a match and play normally for 5–10 minutes.',
-      'Perform repeated swings and menu interactions.',
-      'Observe sporadic input drops (no response).',
-      'Inputs resume without reconnecting controller.',
-    ],
+    video: bug2Video,
   },
 ]
 
-function BugPortfolio() {
+export default function BugPortfolio() {
   return (
-    <div id="portfolio" className="bugs">
+    <section id="portfolio" className="bugs">
       <h2 className="bugs__title">BUG PORTFOLIO</h2>
 
       <div className="bugs__panel">
         {BUGS.map((b, index) => (
-          <section key={b.id} className="bug">
-            <div className="bug__header">
-              <div className="bug__left">
+          <article key={b.id} className="bug">
+            <header className="bug__header">
+              <div>
                 <div className="bug__project">{b.project}</div>
                 <h3 className="bug__name">
                   {index + 1}. {b.title}
@@ -71,35 +59,44 @@ function BugPortfolio() {
               </div>
 
               <div className="bug__chips">
-                <span className={`chip chip--${b.severity.toLowerCase()}`}>{b.severity}</span>
+                <span className={`chip chip--${b.severity.toLowerCase()}`}>
+                  {b.severity}
+                </span>
                 <span className="chip chip--neutral">{b.platform}</span>
                 <span className="chip chip--neutral">{b.status}</span>
               </div>
-            </div>
+            </header>
 
-            <div className="bug__body">
-              <div className="bug__block">
-                <div className="bug__label">Summary</div>
-                <div className="bug__text">{b.summary}</div>
+            <div className="bug__layout">
+              <div className="bug__media">
+                <video
+                  className="bug__video"
+                  src={b.video}
+                  controls
+                  preload="metadata"
+                  playsInline
+                />
               </div>
 
-              <div className="bug__block">
-                <div className="bug__label">Repro Steps</div>
-                <ol className="bug__steps">
-                  {b.steps.map((s, i) => (
-                    <li key={i}>{s}</li>
-                  ))}
-                </ol>
-              </div>
+              <div className="bug__body">
+                <div className="bug__block">
+                  <div className="bug__label">Summary</div>
+                  <div className="bug__text">{b.summary}</div>
+                </div>
 
-              {/* Later: add screenshot/video */}
-              {/* <div className="bug__media">...</div> */}
+                <div className="bug__block">
+                  <div className="bug__label">Repro Steps</div>
+                  <ol className="bug__steps">
+                    {b.steps.map((s, i) => (
+                      <li key={i}>{s}</li>
+                    ))}
+                  </ol>
+                </div>
+              </div>
             </div>
-          </section>
+          </article>
         ))}
       </div>
-    </div>
+    </section>
   )
 }
-
-export default BugPortfolio

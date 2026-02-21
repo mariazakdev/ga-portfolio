@@ -49,10 +49,7 @@ function Contact() {
         </div>
       </div>
 
-      <div className="contact__actions">
-        <button className="btn btn--blue">BACK TO PORTFOLIO</button>
-        <button className="btn btn--red">SEND MESSAGE</button>
-      </div>
+
     </div>
   )
 }

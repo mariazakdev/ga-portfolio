@@ -54,10 +54,7 @@ function About() {
 
       </div>
 
-      <div className="about__actions">
-        <button className="btn btn--gold">BUG PORTFOLIO</button>
-        <button className="btn btn--red">CONTACT</button>
-      </div>
+  
 
     </div>
   )

@@ -30,13 +30,14 @@ export default function Nav() {
         <img src={btnPortfolio} alt="Bug Portfolio" />
       </a>
 
+      <a href="#projects">
+        <img src={btnProjects} alt="Projects" />
+      </a>
+      
       <a href="#contact">
         <img src={btnContact} alt="Contact" />
       </a>
 
-      <a href="#projects">
-        <img src={btnProjects} alt="Projects" />
-      </a>
 
     </nav>
   )
