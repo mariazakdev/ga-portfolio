@@ -30,16 +30,16 @@ body {
   left: 0;
   right: 0;
   z-index: 1000;
-
+height: 60px;
   width: 100%;
-
   background: rgba(10, 6, 18, 0.75);
   backdrop-filter: blur(4px);
 
   padding: 0;
 }
 .page {
-  padding-top: var(--topbar-h);
+ 
+  margin-top: 60px;
 }
 main,
 section {

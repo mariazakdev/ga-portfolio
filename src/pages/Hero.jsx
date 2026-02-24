@@ -1,5 +1,5 @@
 import Nav from "../components/Nav";
-import "./Home.scss";
+import "./Hero.scss"
 
 
 export default function Home() {
