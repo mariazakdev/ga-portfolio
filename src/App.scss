@@ -1,4 +1,4 @@
-#root {
+:root {
 --topbar-h: 190px;
 }
 
@@ -38,19 +38,16 @@ height: 60px;
   padding: 0;
 }
 .page {
- 
-  margin-top: 60px;
+.page {
+  margin-top: 0;
+  padding-top: var(--topbar-h);
 }
-main,
-section {
-  padding-top: var(--header-h);
 }
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
+#about,
+#portfolio,
+#projects,
+#contact {
+  scroll-margin-top: var(--topbar-h) ;
 }
 
 .logo {
