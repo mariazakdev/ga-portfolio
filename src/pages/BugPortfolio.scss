@@ -2,11 +2,9 @@
 
 .bugs {
   max-width: 1100px;
-  margin: 60px auto;
   padding: 50px;
   color: #f2e9ff;
   text-align: center;
-
   border: 2px solid #caa44d;
   box-shadow:
     inset 0 0 0 4px #f5d27a,
@@ -92,6 +90,7 @@
 .bug__body {
   display: grid;
   gap: 14px;
+  
 }
 
 .bug__block {
@@ -119,4 +118,27 @@
     margin-bottom: 8px;
     line-height: 1.5;
   }
+}
+.bug__layout {
+  display: grid;
+  grid-template-columns: 300px 420px; /* fixed text width */
+  gap: 32px;
+  justify-content: center; /* keeps it centered inside article */
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bug__media {
+  display: flex;
+  justify-content: center;
+}
+
+.bug__video {
+  width: 100%;
+  max-width: 320px;   /* controls size */
+  height: auto;
+  border: 2px solid rgba(202, 164, 77, 0.65);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
