@@ -2,7 +2,6 @@
 
 .bugs {
   max-width: 1100px;
-  padding: 50px;
   color: #f2e9ff;
   text-align: center;
   border: 2px solid #caa44d;
@@ -12,6 +11,7 @@
     0 0 25px rgba(0, 0, 0, 0.6);
 
   position: relative;
+  font-family: inherit; 
 }
 
 .bugs__title {
@@ -21,16 +21,9 @@
 }
 
 .bugs__panel {
-  border: 2px solid #caa44d;
-  box-shadow:
-    inset 0 0 0 4px #f5d27a,
-    inset 0 0 0 10px #6b4b12,
-    0 0 25px rgba(0, 0, 0, 0.55);
-
   padding: 26px;
   text-align: left;
 
-  @include noisy-grain(0.22, 220px);
 }
 
 .bug {
@@ -38,7 +31,6 @@
   box-shadow: inset 0 0 0 2px rgba(245, 210, 122, 0.22);
   padding: 18px 18px;
 
-  @include noisy-grain(0.16, 260px);
 
   & + & {
     margin-top: 16px;
@@ -100,7 +92,7 @@
 
 .bug__label {
   color: #f5d27a;
-  font-size: 12px;
+  font-size: 20px;
   letter-spacing: 0.6px;
   text-transform: uppercase;
 }
@@ -108,6 +100,7 @@
 .bug__text {
   line-height: 1.6;
   opacity: 0.95;
+  color: #f5d27a;
 }
 
 .bug__steps {
@@ -117,13 +110,15 @@
   li {
     margin-bottom: 8px;
     line-height: 1.5;
+      color: #f5d27a;
+
   }
 }
 .bug__layout {
   display: grid;
-  grid-template-columns: 300px 420px; /* fixed text width */
+  grid-template-columns: 300px 420px; 
   gap: 32px;
-  justify-content: center; /* keeps it centered inside article */
+  justify-content: center; 
 
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
@@ -131,14 +126,20 @@
 }
 
 .bug__media {
-  display: flex;
-  justify-content: center;
+width: 300px;
+  justify-self: center;
+  align-self: center;
+  padding: 10px;
+
 }
 
 .bug__video {
   width: 100%;
-  max-width: 320px;   /* controls size */
+  max-width: 320px; 
   height: auto;
+   display: block;
+  height: auto;
+
   border: 2px solid rgba(202, 164, 77, 0.65);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
