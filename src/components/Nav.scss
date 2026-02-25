@@ -28,11 +28,12 @@ gap: 5px;
   flex-shrink: 1;   
   @include tablet{
 width: clamp(80px, 18vw, 100px);
+height: 60px;
 
 }
   @include phone{
-width: clamp(40px, 18vw, 70px);
-padding: 0;
-margin: 0;
+width: 70px;
+height: 50px;
+
 }
 }
