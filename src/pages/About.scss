@@ -21,6 +21,7 @@ color: #f5d27a;
   font-size: 32px;
   margin-bottom: 40px;
   letter-spacing: 2px;
+  color: white;
 }
 
 .about__top {
@@ -52,7 +53,6 @@ color: #f5d27a;
   background: #1e1433;
   max-width: 260px;
   margin: 0 auto;
-  border: #7a1c17 2px solid;
 
   @include noisy-grain();
 
