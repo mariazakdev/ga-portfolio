@@ -1,35 +1,21 @@
-// .nav {
-//   display: flex;
-//   flex-wrap: wrap;
-//   justify-content: center;
-//   gap: 24px;
-// }
+@use '../styles/mixins' as *;
 
-// .nav img {
-//   width: 260px;        
-//   height: auto;
-//   display: block;
-//   cursor: pointer;
-//   image-rendering: pixelated;
-//   transition: transform 0.1s ease;
-// }
 
-// .nav img:hover {
-//   transform: translateY(-4px);
-// }
-
-// .nav img:active {
-//   transform: translateY(2px);
-// }
 
 .nav {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 24px;
-
   flex-wrap: nowrap;   // no wrapping
   width: 100%;
+    @include tablet{
+gap: 10px;
+}
+  @include phone{
+gap: 5px;
+}
+
 }
 
 .nav img {
@@ -37,10 +23,16 @@
   height: auto;
   display: block;
   cursor: pointer;
-
   image-rendering: pixelated;
-
   transition: transform 0.1s ease;
-
   flex-shrink: 1;   
+  @include tablet{
+width: clamp(80px, 18vw, 100px);
+
+}
+  @include phone{
+width: clamp(40px, 18vw, 70px);
+padding: 0;
+margin: 0;
+}
 }

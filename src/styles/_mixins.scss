@@ -1,10 +1,20 @@
 // Breakpoints
-$bp-xs: 360px;
-$bp-sm: 480px;
-$bp-md: 768px;
-$bp-lg: 1024px;
-$bp-xl: 1280px;
+$phone: 480px;
+$tablet: 768px;
+$desktop: 1024px;
 
+@mixin tablet {
+  @media (max-width: ($tablet - 1px) ){
+    @content;
+  }
+}
+
+/* Phone (480px and below) */
+@mixin phone {
+  @media (max-width: ($phone - 1px)) {
+    @content;
+  }
+}
 
 
 @mixin noisy-grain($opacity: 0.25, $size: 200px) {
@@ -24,61 +34,4 @@ $bp-xl: 1280px;
     mix-blend-mode: overlay;
     opacity: $opacity;
   }
-}
-
-// Min-width media query
-@mixin up($bp) {
-  @media (min-width: $bp) {
-    @content;
-  }
-}
-
-// Max-width media query
-@mixin down($bp) {
-  @media (max-width: ($bp - 1px)) {
-    @content;
-  }
-}
-
-// Between two breakpoints (inclusive lower bound)
-@mixin between($min, $max) {
-  @media (min-width: $min) and (max-width: ($max - 1px)) {
-    @content;
-  }
-}
-
-// Prefer-reduced-motion helper
-@mixin reduced-motion {
-  @media (prefers-reduced-motion: reduce) {
-    @content;
-  }
-}
-
-// Optional: clamp font helper
-@mixin fluid-type($minSize, $maxSize, $minVw: 360px, $maxVw: 1280px) {
-  font-size: clamp(
-    $minSize,
-    calc(#{$minSize} + (#{$maxSize} - #{$minSize}) * ((100vw - #{$minVw}) / (#{$maxVw} - #{$minVw}))),
-    $maxSize
-  );
-}
-
-@mixin medieval-font(
-  $size: null,
-  $spacing: 2px,
-  $color: #f5d27a
-) {
-  font-family: 'MedievalSharp', cursive;
-  text-transform: uppercase;
-  letter-spacing: $spacing;
-  text-decoration: none;
-  color: $color;
-
-  @if $size {
-    font-size: $size;
-  }
-
-  // text-shadow:
-  //   2px 2px 0 #1a102e,
-  //   0 0 6px rgba(245, 210, 122, 0.35);
 }
