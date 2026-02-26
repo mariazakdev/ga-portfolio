@@ -42,6 +42,64 @@ const BUGS = [
   },
 ]
 
+// export default function BugPortfolio() {
+//   return (
+//     <section id="portfolio" className="bugs">
+//       <h2 className="bugs__title">BUG PORTFOLIO</h2>
+
+//       <div className="bugs__panel">
+//         {BUGS.map((b, index) => (
+//           <article key={b.id} className="bug">
+//             <header className="bug__header">
+//               <div>
+//                 <div className="bug__project">{b.project}</div>
+//                 <h3 className="bug__name">
+//                   {index + 1}. {b.title}
+//                 </h3>
+//               </div>
+
+//               <div className="bug__chips">
+//                 <span className={`chip chip--${b.severity.toLowerCase()}`}>
+//                   {b.severity}
+//                 </span>
+//                 <span className="chip chip--neutral">{b.platform}</span>
+//                 <span className="chip chip--neutral">{b.status}</span>
+//               </div>
+//             </header>
+
+//             <div className="bug__layout">
+//               <div className="bug__media">
+//                 <video
+//                   className="bug__video"
+//                   src={b.video}
+//                   controls
+//                   preload="metadata"
+//                   playsInline
+//                 />
+//               </div>
+
+//               <div className="bug__body">
+//                 <div className="bug__block">
+//                   <div className="bug__label">Summary</div>
+//                   <div className="bug__text">{b.summary}</div>
+//                 </div>
+
+//                 <div className="bug__block">
+//                   <div className="bug__label">Repro Steps</div>
+//                   <ol className="bug__steps">
+//                     {b.steps.map((s, i) => (
+//                       <li key={i}>{s}</li>
+//                     ))}
+//                   </ol>
+//                 </div>
+//               </div>
+//             </div>
+//           </article>
+//         ))}
+//       </div>
+//     </section>
+//   )
+// }
 export default function BugPortfolio() {
   return (
     <section id="portfolio" className="bugs">
@@ -49,28 +107,28 @@ export default function BugPortfolio() {
 
       <div className="bugs__panel">
         {BUGS.map((b, index) => (
-          <article key={b.id} className="bug">
-            <header className="bug__header">
+          <article key={b.id} className="bugs__item">
+            <header className="bugs__item-header">
               <div>
-                <div className="bug__project">{b.project}</div>
-                <h3 className="bug__name">
+                <div className="bugs__item-project">{b.project}</div>
+                <h3 className="bugs__item-name">
                   {index + 1}. {b.title}
                 </h3>
               </div>
 
-              <div className="bug__chips">
-                <span className={`chip chip--${b.severity.toLowerCase()}`}>
+              <div className="bugs__item-chips">
+                <span className={`bugs__item-chip bugs__item-chip--${b.severity.toLowerCase()}`}>
                   {b.severity}
                 </span>
-                <span className="chip chip--neutral">{b.platform}</span>
-                <span className="chip chip--neutral">{b.status}</span>
+                <span className="bugs__item-chip bugs__item-chip--neutral">{b.platform}</span>
+                <span className="bugs__item-chip bugs__item-chip--neutral">{b.status}</span>
               </div>
             </header>
 
-            <div className="bug__layout">
-              <div className="bug__media">
+            <div className="bugs__item-layout">
+              <div className="bugs__item-media">
                 <video
-                  className="bug__video"
+                  className="bugs__item-video"
                   src={b.video}
                   controls
                   preload="metadata"
@@ -78,15 +136,15 @@ export default function BugPortfolio() {
                 />
               </div>
 
-              <div className="bug__body">
-                <div className="bug__block">
-                  <div className="bug__label">Summary</div>
-                  <div className="bug__text">{b.summary}</div>
+              <div className="bugs__item-body">
+                <div className="bugs__item-block">
+                  <div className="bugs__item-label">Summary</div>
+                  <div className="bugs__item-text">{b.summary}</div>
                 </div>
 
-                <div className="bug__block">
-                  <div className="bug__label">Repro Steps</div>
-                  <ol className="bug__steps">
+                <div className="bugs__item-block">
+                  <div className="bugs__item-label">Repro Steps</div>
+                  <ol className="bugs__item-steps">
                     {b.steps.map((s, i) => (
                       <li key={i}>{s}</li>
                     ))}
