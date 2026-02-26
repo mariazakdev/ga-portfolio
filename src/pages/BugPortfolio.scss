@@ -291,7 +291,6 @@
       gap: 14px;
       max-width: 400px;
 
-      /* On wideTablet, keep centered and readable */
       @include wideTablet {
         width: 100%;
         max-width: 520px;
