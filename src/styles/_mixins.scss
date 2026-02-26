@@ -1,8 +1,15 @@
 // Breakpoints
 $phone: 480px;
 $tablet: 768px;
+$wideTablet: 980px;
 $desktop: 1024px;
 
+
+@mixin wideTablet {
+  @media (max-width: ($wideTablet - 1px) ){
+    @content;
+  }
+}
 @mixin tablet {
   @media (max-width: ($tablet - 1px) ){
     @content;

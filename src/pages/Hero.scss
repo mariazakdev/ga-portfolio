@@ -6,10 +6,16 @@
   display: flex;
   flex-direction: wrap;
   /* backdrop */
-  background: url('../assets/home_backdrop.png') center / cover no-repeat;
+  background: url('../assets/Hero.png') center / cover no-repeat;
   position: relative;
     @include tablet{
-max-width: 600px;
+max-width: 600px; 
+ background: url('../assets/Hero_tablet.png') center / cover no-repeat;
+}
+
+    @include phone{
+max-width: 600px; 
+  background: url('../assets/Hero_tablet.png') center / cover no-repeat;
 
 }
 }
