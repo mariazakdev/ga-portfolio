@@ -23,14 +23,16 @@
 
 .about__top {
  display: flex;
+ flex-direction: row;
   justify-content: center;  
   align-items: center;    
-  flex-wrap: wrap;
+ 
   border: 2px solid #caa44d;
-  margin: 20px;
+
   padding: 10px;
   @include wideTablet{
-  grid-template-columns: 1fr;
+flex-direction: column;
+justify-content: center;
 }
 }
 
@@ -38,6 +40,7 @@
   height: 80%;                    
   display: flex;
   flex-direction: column;
+  justify-self: center;
   border: 6px solid #caa44d;
   padding: 10px;
   background: #1e1433;
@@ -63,14 +66,27 @@
 
 .about__text {
   max-width: 520px;    
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  height: auto;
   margin: 0 auto;       
   text-align: center;   
   box-sizing: border-box;
+    @include wideTablet{
+max-width: 100%;  
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
   p {
     margin-bottom: 20px;
     line-height: 1.6;
-    max-width: 400px ;
+    max-width: 300px ;
+       @include wideTablet{
+max-width: 70%;    
+}
   }
 }
 
