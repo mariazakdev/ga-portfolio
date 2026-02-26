@@ -1,7 +1,7 @@
 @use '../styles/mixins' as *;
 
 .bugs {
-  max-width: 1100px;
+   width: 100%;
   color: #f2e9ff;
   text-align: center;
   border: 2px solid #caa44d;
@@ -9,9 +9,9 @@
     inset 0 0 0 4px #f5d27a,
     inset 0 0 0 10px #6b4b12,
     0 0 25px rgba(0, 0, 0, 0.6);
-
   position: relative;
   font-family: inherit; 
+
 }
 
 .bugs__title {
@@ -130,7 +130,7 @@ width: 300px;
   justify-self: center;
   align-self: center;
   padding: 10px;
-
+ 
 }
 
 .bug__video {
@@ -142,4 +142,5 @@ width: 300px;
 
   border: 2px solid rgba(202, 164, 77, 0.65);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  
 }

@@ -1,10 +1,13 @@
+@use './styles/mixins' as *;
+
+
 body {
   margin: 0;
   min-height: 100vh;
 
-  display: flex;              /* key */
-  justify-content: center;    /* horizontal center */
-  
+  display: flex;             
+  justify-content: center;    
+  align-self: start;
   background:
     linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
     url('./assets/texture_backdrop.png') center center / cover no-repeat;
@@ -20,8 +23,11 @@ body {
 }
 
 .page {
+  
   width: 100%;
-
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 24px;  
   background: rgba(18, 22, 35, 0.25);  /* slightly stronger for glass effect */
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -30,4 +36,26 @@ body {
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
 
   color: #f4f4f4;
+// @media (max-width: 900px) {
+//     width: 100%;
+//     border: red solid 3px;
+//     padding: 0;
+//   }
+
+@include tablet {
+    width: 100%;  
+    padding: 0px;
+}
+@media (max-width: 600px) {
+    width: 100%;
+    border: rgb(255, 94, 0) solid 3px;
+    padding: 0;
+  }
+@include phone {
+    max-width: 100%;
+    padding: 12px;
+    border: rgb(0, 255, 13) solid 3px;
+
+}
+  
 }
