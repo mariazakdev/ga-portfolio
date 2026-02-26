@@ -14,8 +14,8 @@
   position: relative;
 }
 :root {
-  --card-side-w: clamp(260px, 38vw, 500px); /* smaller + responsive */
-  --card-side-h: 280px;                    /* smaller height */
+  --card-side-w: clamp(260px, 38vw, 500px); 
+  --card-side-h: 280px;                    
   --card-gap: 18px;
 }
 
@@ -44,7 +44,6 @@ display: flex;
  @include wideTablet{
     flex-direction: column;
     align-items: center;  
-   
 }
 }
 

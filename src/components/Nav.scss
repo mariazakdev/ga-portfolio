@@ -29,7 +29,6 @@ gap: 5px;
   @include tablet{
 width: clamp(80px, 18vw, 100px);
 height: 60px;
-
 }
   @include phone{
 width: 70px;
