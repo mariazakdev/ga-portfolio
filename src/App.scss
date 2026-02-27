@@ -25,34 +25,65 @@ body {
   width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
-  padding: 5px;  
-  background: rgba(18, 22, 35, 0.25);  /* slightly stronger for glass effect */
+  padding: 16px;
+
+  background: rgba(18, 22, 35, 0.25);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-radius: 18px;
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
-
   color: #f4f4f4;
-@media (max-width: 900px) {
-    width: 750px;
-    border: red solid 3px;
-    padding: 0;
-  }
 
-@include tablet {
-    width: 100%;  
-    padding: 0px;
-}
-@media (max-width: 600px) {
+  /* remove fixed 750px: this was breaking you */
+  @include wideTablet {
     width: 100%;
-    border: rgb(255, 94, 0) solid 3px;
-    padding: 0;
-  }
-@include phone {
-    max-width: 100%;
     padding: 12px;
-    border: rgb(0, 255, 13) solid 3px;
+  }
 
+  @include tablet {
+    width: 100%;
+    padding: 12px;
+  }
+
+  @include phone {
+    width: 100%;
+    padding: 12px;
+  }
 }
+
+// .page {
+//   width: 100%;
+//   margin: 0 auto;
+//   box-sizing: border-box;
+//   padding: 5px;  
+//   background: rgba(18, 22, 35, 0.25);  /* slightly stronger for glass effect */
+//   backdrop-filter: blur(12px);
+//   -webkit-backdrop-filter: blur(12px);
+//   border-radius: 18px;
+//   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+
+//   color: #f4f4f4;
+//   @include wideTablet {
+//    width: 750px;
+//     padding: 0;
+// }
+
+// @include tablet {
+//     width: 100%;  
+//     padding: 0px;
+// }
+// @media (max-width: 600px) {
+//     width: 100%;
+//     padding: 0;
+//   }
+// @include phone {
+//     max-width: 100%;
+//     padding: 12px;
+// }
   
-}
+// }
+
+// to do
+// fix phone size about me and contact
+// match page sizes
+// update BEM

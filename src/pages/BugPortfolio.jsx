@@ -42,64 +42,6 @@ const BUGS = [
   },
 ]
 
-// export default function BugPortfolio() {
-//   return (
-//     <section id="portfolio" className="bugs">
-//       <h2 className="bugs__title">BUG PORTFOLIO</h2>
-
-//       <div className="bugs__panel">
-//         {BUGS.map((b, index) => (
-//           <article key={b.id} className="bug">
-//             <header className="bug__header">
-//               <div>
-//                 <div className="bug__project">{b.project}</div>
-//                 <h3 className="bug__name">
-//                   {index + 1}. {b.title}
-//                 </h3>
-//               </div>
-
-//               <div className="bug__chips">
-//                 <span className={`chip chip--${b.severity.toLowerCase()}`}>
-//                   {b.severity}
-//                 </span>
-//                 <span className="chip chip--neutral">{b.platform}</span>
-//                 <span className="chip chip--neutral">{b.status}</span>
-//               </div>
-//             </header>
-
-//             <div className="bug__layout">
-//               <div className="bug__media">
-//                 <video
-//                   className="bug__video"
-//                   src={b.video}
-//                   controls
-//                   preload="metadata"
-//                   playsInline
-//                 />
-//               </div>
-
-//               <div className="bug__body">
-//                 <div className="bug__block">
-//                   <div className="bug__label">Summary</div>
-//                   <div className="bug__text">{b.summary}</div>
-//                 </div>
-
-//                 <div className="bug__block">
-//                   <div className="bug__label">Repro Steps</div>
-//                   <ol className="bug__steps">
-//                     {b.steps.map((s, i) => (
-//                       <li key={i}>{s}</li>
-//                     ))}
-//                   </ol>
-//                 </div>
-//               </div>
-//             </div>
-//           </article>
-//         ))}
-//       </div>
-//     </section>
-//   )
-// }
 export default function BugPortfolio() {
   return (
     <section id="portfolio" className="bugs">
