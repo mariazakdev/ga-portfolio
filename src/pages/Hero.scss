@@ -49,5 +49,7 @@
     background: url('../assets/Hero_tablet.png') center / cover no-repeat;
   }
 
- 
+  @include phone {
+    background: url('../assets/Hero_phone.png') center / cover no-repeat;
+  }
 }
