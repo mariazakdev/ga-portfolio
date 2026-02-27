@@ -1,10 +1,26 @@
 @use "../styles/mixins" as *;
 
+/* =========================
+   ROOT VARIABLES
+========================= */
+
+:root {
+  --card-side-w: clamp(260px, 50%, 500px);
+  --card-side-h: 280px;
+  --card-gap: 18px;
+}
+
+/* =========================
+   PROJECTS BLOCK
+========================= */
+
 .projects {
-  max-width: 1100px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   color: #f2e9ff;
   text-align: center;
-  box-sizing: border-box;
+
   border: 2px solid #caa44d;
   box-shadow:
     inset 0 0 0 4px #f5d27a,
@@ -13,11 +29,10 @@
 
   position: relative;
 }
-:root {
-  --card-side-w: clamp(260px, 38vw, 500px); 
-  --card-side-h: 280px;                    
-  --card-gap: 18px;
-}
+
+/* =========================
+   TITLE
+========================= */
 
 .projects__title {
   font-size: 32px;
@@ -25,83 +40,124 @@
   letter-spacing: 2px;
 }
 
+/* =========================
+   PANEL + LIST
+========================= */
+
 .projects__panel {
   padding: 26px;
   text-align: left;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .projects__list {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 26px;
+
+  
+  box-sizing: border-box;
 }
 
-.projectCard {
-display: flex;
-  justify-content: center; 
-  align-items: stretch;    
+/* =========================
+   CARD
+========================= */
+
+.projects__card {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
   gap: 24px;
+  max-width: 100%;
+  margin-top: 20px;
+  box-sizing: border-box;
 
- @include wideTablet{
+  @include wideTablet {
     flex-direction: column;
-    align-items: center;  
-}
+    align-items: center;
+    width: min(720px, 92%);
+    gap: 16px;
+  }
 }
 
-.projectCard__media,
-.projectCard__text {
-  flex: 0 0 var(--card-side-w);  
+/* =========================
+   CARD SECTIONS
+========================= */
+
+.projects__card-media,
+.projects__card-text {
+  flex: 0 0 var(--card-side-w);
   width: var(--card-side-w);
   max-width: 100%;
   box-sizing: border-box;
 
-  min-height: var(--card-side-h); 
+  min-height: var(--card-side-h);
+
   display: flex;
   flex-direction: column;
-    @include wideTablet{
-  width: auto;
-   
-}
- 
+
+  @include wideTablet {
+    flex: 0 0 auto;
+    width: 100%;
+    min-height: 0;
+  }
 }
 
-.projectCard__media {
+/* =========================
+   MEDIA
+========================= */
+
+.projects__card-media {
   overflow: hidden;
   align-items: center;
   justify-content: center;
 }
 
-.projectCard__img {
+.projects__card-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
- @include wideTablet{
-     max-height: 320px;
-}
- 
+
+  @include wideTablet {
+    max-height: 320px;
+  }
 }
 
-.projectCard__text {
-// flex-direction: column;
-//   justify-content: center; /* centers text vertically */
+/* =========================
+   TEXT PANEL
+========================= */
+
+.projects__card-text {
   padding: 18px 18px 16px;
   background: rgba(12, 8, 22, 0.55);
+
   border: 2px solid rgba(202, 164, 77, 0.85);
   box-shadow:
     inset 0 0 0 4px rgba(245, 210, 122, 0.18),
     inset 0 0 0 10px rgba(107, 75, 18, 0.45),
     0 0 18px rgba(0, 0, 0, 0.35);
-  padding: 18px 18px 16px;
+
   color: #f5d27a;
 
+  min-width: 0;              // prevents flex overflow
+  overflow-wrap: anywhere;   // prevents long text spill
 }
-.projectCard__heading {
+
+/* =========================
+   TEXT CONTENT
+========================= */
+
+.projects__card-heading {
   margin: 0 0 10px;
   font-size: 22px;
   line-height: 1.15;
 }
 
-.projectCard__p {
+.projects__card-p {
   margin: 0 0 12px;
   line-height: 1.55;
   font-size: 16px;

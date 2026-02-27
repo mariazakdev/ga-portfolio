@@ -1,21 +1,53 @@
 @use '../styles/mixins' as *;
 
-
 .home {
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   display: flex;
-  flex-direction: wrap;
-  /* backdrop */
-  background: url('../assets/Hero.png') center / cover no-repeat;
+  flex-wrap: wrap;         
+  flex-direction: row;      
   position: relative;
-    @include tablet{
-max-width: 600px; 
- background: url('../assets/Hero_tablet.png') center / cover no-repeat;
-}
 
-    @include phone{
-max-width: 600px; 
-  background: url('../assets/Hero_tablet.png') center / cover no-repeat;
+  clip-path: polygon(
+    14px 0,
+    calc(100% - 14px) 0,
+    100% 14px,
+    100% calc(100% - 14px),
+    calc(100% - 14px) 100%,
+    14px 100%,
+    0 calc(100% - 14px),
+    0 14px
+  );
 
-}
+  border: 3px solid #0b1433;
+  box-shadow:
+    inset 0 0 0 3px rgba(255, 255, 255, 0.10),
+    inset 0 -10px 0 rgba(0, 0, 0, 0.28),
+    0 18px 45px rgba(0, 0, 0, 0.45);
+
+  background: url('../assets/Hero.png') center / cover no-repeat;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    background:
+      radial-gradient(ellipse at center, rgba(0,0,0,0) 45%, rgba(0,0,0,0.45) 100%),
+      linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.25));
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  @include noisy-grain(0.25, 260px);
+
+  @include wideTablet {
+    background: url('../assets/Hero_tablet.png') center / cover no-repeat;
+  }
+
+ 
 }

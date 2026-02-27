@@ -1,32 +1,43 @@
-@use './styles/mixins' as *;
+@use "./styles/mixins" as *;
 
+// AI was used to create buttons, hero, and background images
 
+html {
+  overflow-y: scroll;          
+  scrollbar-gutter: stable;   
+}
 body {
   margin: 0;
   min-height: 100vh;
-  display: flex;             
-  justify-content: center;    
-  align-self: start;
+  display: flex;
+  justify-content: center;
+  align-self: center;
   background:
     linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
-    url('./assets/texture_backdrop.png') center center / cover no-repeat;
-
+    url("./assets/texture_backdrop.png") center / cover no-repeat;
   background-blend-mode: multiply;
 }
 
+/* ONE source of truth for width */
 .app {
-  width: 100%;
-  max-width: 1100px;   
+width: min(1100px, 94vw); 
+  padding: 0 12px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
+ 
 }
 
+
+.siteHeader,
 .page {
   width: 100%;
-  margin: 0 auto;
+}
+
+/* This is the “frame” container. It never changes width. */
+.page {
   box-sizing: border-box;
   padding: 16px;
-
   background: rgba(18, 22, 35, 0.25);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -34,56 +45,13 @@ body {
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
   color: #f4f4f4;
 
-  /* remove fixed 750px: this was breaking you */
-  @include wideTablet {
-    width: 100%;
-    padding: 12px;
-  }
-
-  @include tablet {
-    width: 100%;
-    padding: 12px;
-  }
-
-  @include phone {
-    width: 100%;
-    padding: 12px;
-  }
+  @include wideTablet { padding: 12px; }
+  @include tablet { padding: 12px; }
+  @include phone { padding: 12px; }
 }
 
-// .page {
-//   width: 100%;
-//   margin: 0 auto;
-//   box-sizing: border-box;
-//   padding: 5px;  
-//   background: rgba(18, 22, 35, 0.25);  /* slightly stronger for glass effect */
-//   backdrop-filter: blur(12px);
-//   -webkit-backdrop-filter: blur(12px);
-//   border-radius: 18px;
-//   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
-
-//   color: #f4f4f4;
-//   @include wideTablet {
-//    width: 750px;
-//     padding: 0;
-// }
-
-// @include tablet {
-//     width: 100%;  
-//     padding: 0px;
-// }
-// @media (max-width: 600px) {
-//     width: 100%;
-//     padding: 0;
-//   }
-// @include phone {
-//     max-width: 100%;
-//     padding: 12px;
-// }
-  
-// }
-
-// to do
-// fix phone size about me and contact
-// match page sizes
-// update BEM
+/* Force every routed page section to fill the same width */
+.page > section {
+  width: 100%;
+  box-sizing: border-box;
+}

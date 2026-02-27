@@ -46,30 +46,30 @@ const PROJECTS = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="projects">
-      <h2 className="projects__title">PROJECTS</h2>
+   <section id="projects" className="projects">
+  <h2 className="projects__title">PROJECTS</h2>
 
-      <div className="projects__panel">
-        <div className="projects__list">
-          {PROJECTS.map((p) => (
-            <article key={p.id} className="projectCard">
-              <div className="projectCard__media">
-                <img className="projectCard__img" src={p.img} alt={p.fileLabel} />
-              </div>
+  <div className="projects__panel">
+    <div className="projects__list">
+      {PROJECTS.map((p) => (
+        <article key={p.id} className="projects__card">
+          <div className="projects__card-media">
+            <img className="projects__card-img" src={p.img} alt={p.fileLabel} />
+          </div>
 
-              <div className="projectCard__text">
-                <h3 className="projectCard__heading">{p.fileLabel}</h3>
+          <div className="projects__card-text">
+            <h3 className="projects__card-heading">{p.fileLabel}</h3>
 
-                {p.summary.map((para, idx) => (
-                  <p key={idx} className="projectCard__p">
-                    {para}
-                  </p>
-                ))}
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
+            {p.summary.map((para, idx) => (
+              <p key={idx} className="projects__card-p">
+                {para}
+              </p>
+            ))}
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
   );
 }

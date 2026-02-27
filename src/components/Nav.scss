@@ -1,38 +1,84 @@
-@use '../styles/mixins' as *;
+// @use '../styles/mixins' as *;
 
 
 
-.nav {
+// .nav {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   gap: 24px;
+//   flex-wrap: nowrap;   
+//   width: 100%;
+//     @include tablet{
+// gap: 10px;
+// }
+//   @include phone{
+// gap: 5px;
+// }
+
+// }
+
+// .nav img {
+//   width: clamp(140px, 18vw, 260px);
+//   height: auto;
+//   display: block;
+//   cursor: pointer;
+//   image-rendering: pixelated;
+//   transition: transform 0.1s ease;
+//   flex-shrink: 1;   
+//   @include tablet{
+// width: clamp(80px, 18vw, 100px);
+// height: 60px;
+// }
+//   @include phone{
+// width: 70px;
+// height: 50px;
+
+// }
+// }
+
+/* Nav.scss (same styling, cleaned BEM + nested) */
+@use "../styles/mixins" as *;
+
+.siteNav {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 24px;
-  flex-wrap: nowrap;   // no wrapping
+  flex-wrap: nowrap;
   width: 100%;
-    @include tablet{
-gap: 10px;
-}
-  @include phone{
-gap: 5px;
-}
 
-}
+  @include tablet {
+    gap: 10px;
+  }
 
-.nav img {
-  width: clamp(140px, 18vw, 260px);
-  height: auto;
-  display: block;
-  cursor: pointer;
-  image-rendering: pixelated;
-  transition: transform 0.1s ease;
-  flex-shrink: 1;   
-  @include tablet{
-width: clamp(80px, 18vw, 100px);
-height: 60px;
-}
-  @include phone{
-width: 70px;
-height: 50px;
+  @include phone {
+    gap: 5px;
+  }
 
-}
+  &__link {
+    display: inline-flex;
+    text-decoration: none;
+  }
+
+  &__img {
+    width: clamp(140px, 18vw, 260px);
+    height: auto;
+    display: block;
+    cursor: pointer;
+
+    image-rendering: pixelated;
+    transition: transform 0.1s ease;
+    flex-shrink: 1;
+
+    @include tablet {
+      width: clamp(80px, 18vw, 100px);
+      height: 60px;
+    }
+
+    @include phone {
+      width: 70px;
+      height: 50px;
+    }
+  }
 }

@@ -25,5 +25,3 @@ export default function App() {
    
   )
 }
-// fix tablet sizes of img in bug and video in proj
-// add avator to home 
