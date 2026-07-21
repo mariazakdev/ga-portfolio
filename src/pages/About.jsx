@@ -25,8 +25,8 @@ function About() {
           <p>
             With an advanced college diploma in Game Development from
             Centennial College and hands-on QA testing for both major and indie
-            game titles across mobile, PC, consoles, and VR, I've honed my
-            skills in identifying critical issues and providing clear,
+            game titles across PC, and VR. I have also developed a Web Application game to test for bugs/issues.
+            I've honed my skills in identifying critical issues and providing clear,
             actionable reports for development teams.
           </p>
         </div>
@@ -34,11 +34,14 @@ function About() {
 
       <div className="about__bottom">
 
-        <div className="about__card about__education">
+     <div className="about__card about__education">
           <h3>EDUCATION</h3>
           <p>
-            Advanced College Diploma in Game Development
-            from Centennial College
+            Advanced College Diploma in Game Development{' '}
+            <strong>Centennial College.</strong><br />
+            College Certificate in Art and Design Fundamentals{' '}<br />
+            <em>with Honours</em>{' '}<br />
+            <strong>Centennial College</strong>
           </p>
         </div>
 

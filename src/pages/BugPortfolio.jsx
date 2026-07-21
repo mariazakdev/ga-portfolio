@@ -2,6 +2,8 @@ import './BugPortfolio.scss'
 
 import bug1Video from '../assets/Page-Bug Report 1.mp4'
 import bug2Video from '../assets/Page-Bug Report 2.mp4'
+import bug3Video from '../assets/Good Eyes Game Bug Report.mp4'
+
 
 const BUGS = [
   {
@@ -17,7 +19,8 @@ const BUGS = [
       'Enter the vigil area and move the character toward the far left side.',
       'Move close to the left edge of the platform as far as possible.',
       'Fly through the vigil area layout.',
-      'The texture artifact fully obscures the background layer.',
+      'The texture artifact fully obscures the background layer (Actual Result).',
+    'Expected Result: The texture artifact should not fully obscure the background layer.',
     ],
     video: bug1Video,
   },
@@ -36,10 +39,33 @@ const BUGS = [
       'Move right and skip dialogue.',
       'Avoid summoned firefly and proceed right.',
       'Move to the wooden floor edge.',
-      'Cape Jake clips through and falls.',
+      'Cape Jake clips through and then falls (Actual Result).',
+      'Expected Result: Cape Jake should not clip through the floor and then fall.',
     ],
     video: bug2Video,
   },
+{
+    id: 'bug3',
+    project: 'Good Eyes Game (Project)',
+    title: 'Return to Main Menu Button Switches to Incorrect Scene',
+    severity: 'Major',
+    platform: 'Web App',
+    status: 'Open',
+    summary:
+      'The Return to Main Menu Button switches to the wrong scene (Game Logic Bug).',
+    steps: [
+      'On your Web Browser, press the "Run Game" button when starting the game.',
+      'Once the game has started, the Main Menu pops up on screen.',
+      'Press the "Color Game" button in the Main Menu.',
+      'In the Color Game tutorial scene, press the "Play Game" button.',
+      'After you press the "Play Game" button, you will notice the "Color Game" scene is displayed on the screen.',
+      'Press the "Return to the Main Menu" button on the bottom right of your screen.',
+      'You will notice that after pressing the "Return to the Main Menu" button, it will switch to the incorrect scene, i.e. the Letter Game tutorial scene (Actual Result).',
+      'Expected Result: The "Return to the Main Menu" button should switch to the correct scene, i.e. the "Main Menu" scene.',
+    ],
+    video: bug3Video,
+  },
+
 ]
 
 export default function BugPortfolio() {
